@@ -1,6 +1,4 @@
-﻿using BlazorBasics.Captcha.Entities;
-
-namespace BlazorBasics.Captcha.Validdators;
+﻿namespace BlazorBasics.Captcha.Validdators;
 internal class CaptchaValidaor
 {
     readonly CaptchaItem Item;

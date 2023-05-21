@@ -1,8 +1,4 @@
-﻿using BlazorBasics.Captcha.Entities;
-using BlazorBasics.Captcha.Helpers;
-using BlazorBasics.Captcha.Validdators;
-
-namespace BlazorBasics.Captcha.ViewModel;
+﻿namespace BlazorBasics.Captcha.ViewModel;
 
 internal class CaptchaViewModel
 {

@@ -1,6 +1,4 @@
-﻿using BlazorBasics.Captcha.Entities;
-
-namespace BlazorBasics.Captcha.Helpers;
+﻿namespace BlazorBasics.Captcha.Helpers;
 internal static class CaptchaCapitalsHelper
 {
     internal static void CreateQuestions(List<CaptchaItem> CaptchaItems)

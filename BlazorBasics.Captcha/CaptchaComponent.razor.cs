@@ -1,11 +1,6 @@
-using BlazorBasics.Captcha.Entities;
-using BlazorBasics.Captcha.Validdators;
-using BlazorBasics.Captcha.ViewModel;
-using Microsoft.AspNetCore.Components;
-
 namespace BlazorBasics.Captcha
 {
-    public partial class CaptchaComponent
+    public partial class CaptchaComponent : ComponentBase
     {
         [Parameter] public CaptchaProperties Properties { get; set; }
         [Parameter] public EventCallback<bool> OnValidate { get; set; }
