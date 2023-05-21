@@ -7,8 +7,8 @@ namespace BlazorBasics.Captcha
 {
     public partial class CaptchaComponent
     {
-        [Parameter, EditorRequired] public CaptchaProperties Properties { get; set; }
-        [Parameter, EditorRequired] public EventCallback<bool> OnValidate { get; set; }
+        [Parameter] public CaptchaProperties Properties { get; set; }
+        [Parameter] public EventCallback<bool> OnValidate { get; set; }
         [Parameter] public Func<Task<IEnumerable<CaptchaItem>>> DataSource { get; set; }
         [Parameter] public RenderFragment BeforeValidate { get; set; }
         [Parameter] public RenderFragment AfterValidate { get; set; }
