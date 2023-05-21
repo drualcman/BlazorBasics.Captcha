@@ -3,16 +3,16 @@
     <div @attributes=WrapperAttributes>
         @if(ViewModel.IsValidated)
         {
-            <div class="control">
-                @if(AfterValidate is null)
-                {
+            if(AfterValidate is null)
+            {
+                <div class="control">
                     <button type="@Properties.Button.ToString().ToLower()" @onclick=OnSubmit class="button is-success">Send</button>
-                }
-                else
-                {
+                </div>
+            }
+            else
+            {
                 @AfterValidate
-                }
-            </div>
+            }
         }
         else
         {
