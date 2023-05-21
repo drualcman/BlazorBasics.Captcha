@@ -1,5 +1,5 @@
 ﻿.field:not(:last-child) {
-    margin-bottom: .75rem;
+    margin-bottom: .35rem;
 }
 
 .field.has-addons {
@@ -28,6 +28,7 @@
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
     }
+
     .field.has-addons .control .input:not([disabled]):hover {
         z-index: 2
     }
@@ -130,12 +131,18 @@ span {
         margin-bottom: 0.5em;
     }
 
-.help {
+.help,
+.error,
+.validation-message {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     margin-top: 0.25rem;
+    margin-bottom: 0.20rem;
 }
 
+.error
 .validation-message {
     color: red;
+    display: block;
+    font-size: 0.70rem;
 }
