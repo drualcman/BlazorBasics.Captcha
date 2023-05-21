@@ -12,6 +12,7 @@ namespace BlazorBasics.Captcha
         [Parameter] public Func<Task<IEnumerable<CaptchaItem>>> DataSource { get; set; }
         [Parameter] public RenderFragment BeforeValidate { get; set; }
         [Parameter] public RenderFragment AfterValidate { get; set; }
+        [Parameter] public EventCallback OnSubmit { get; set; }
         [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object> WrapperAttributes { get; set; }
 
         CaptchaViewModel ViewModel;
@@ -31,6 +32,6 @@ namespace BlazorBasics.Captcha
             ViewModel.Validate();
             if(OnValidate.HasDelegate)
                 await OnValidate.InvokeAsync(ViewModel.IsValidated);
-        }
+        } 
     }
 }
