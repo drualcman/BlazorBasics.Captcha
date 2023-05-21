@@ -1,0 +1,105 @@
+﻿.field.has-addons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+    .field.has-addons .control:not(:last-child) {
+        margin-right: -1px;
+    }
+
+    .field.has-addons .control:last-child:not(:only-child) .button,
+    .field.has-addons .control:last-child:not(:only-child) .input {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+.control {
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: inherit;
+}
+
+.input {
+    background-color: white;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+}
+
+.button,
+.input {
+    margin: 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: calc(0.75em - 1px);
+    padding-right: calc(0.75em - 1px);
+    padding-top: calc(0.5em - 1px);
+    position: relative;
+    vertical-align: top;
+}
+
+.button {
+    background-color: #485fc7;
+    border-color: transparent;
+    border-width: 1px;
+    color: #fff;
+    cursor: default;
+    justify-content: center;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    white-space: nowrap;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+span {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+
+.label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #363636;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+    .label:not(:last-child) {
+        margin-bottom: 0.5em;
+    }
+
+.help {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.validation-message {
+    color: red;
+}
