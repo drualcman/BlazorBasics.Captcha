@@ -3,7 +3,8 @@
 internal class CaptchaViewModel
 {
     public string ToValidate { get; set; }
-    public bool IsValidated { get; set; }
+    public bool IsValidated { get; private set; }
+    public bool IsValid { get; private set; }
     public string Question =>
         CaptchaItems.FirstOrDefault(q => q.Selected == true).Question ?? "";
 
@@ -12,7 +13,8 @@ internal class CaptchaViewModel
     public CaptchaViewModel(CaptchaType type, IEnumerable<CaptchaItem> dataSource)
     {
         Type = type;
-        CaptchaItems = new List<CaptchaItem>(dataSource);
+        CaptchaItems = new List<CaptchaItem>(dataSource);        
+        IsValidated = false;
         Initialize();
     }
 
@@ -66,9 +68,10 @@ internal class CaptchaViewModel
 
     public void Validate()
     {
+        IsValidated = true;
         CaptchaValidaor validator = new CaptchaValidaor(Selected);
-        if(validator.Validate(ToValidate)) IsValidated = true;
-        else Initialize();
+        IsValid = validator.Validate(ToValidate);
+        if(!IsValid) Initialize();
     }
 
 }

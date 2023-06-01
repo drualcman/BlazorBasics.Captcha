@@ -1,7 +1,7 @@
 ﻿@if(ViewModel is not null)
 {
     <div @attributes=WrapperAttributes>
-        @if(ViewModel.IsValidated)
+        @if(ViewModel.IsValid)
         {
             if(AfterValidate is null)
             {
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="error">
-                @if(!ViewModel.IsValidated)
+                @if(ViewModel.IsValidated && !ViewModel.IsValid)
                 {
                     <span class="validation-message">@Properties.ErrorMessage</span>
                 }

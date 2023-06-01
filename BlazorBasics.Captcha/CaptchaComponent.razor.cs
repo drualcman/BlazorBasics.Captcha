@@ -28,7 +28,7 @@ namespace BlazorBasics.Captcha
         {
             ViewModel.Validate();
             if(OnValidate.HasDelegate)
-                await OnValidate.InvokeAsync(ViewModel.IsValidated);
+                await OnValidate.InvokeAsync(ViewModel.IsValid);
         }
     }
 }
