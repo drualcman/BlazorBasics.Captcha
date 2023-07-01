@@ -2,41 +2,6 @@
     margin-bottom: .35rem;
 }
 
-.field.has-addons {
-    display: flex;
-    justify-content: flex-start;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    z-index: 2;
-}
-
-    .field.has-addons .control:not(:last-child) {
-        margin-right: -1px;
-    }
-
-    .field.has-addons .control .input:not([disabled]):active {
-        z-index: 3;
-    }
-
-    .field.has-addons .control:first-child:not(:only-child) .input {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-    }
-
-    .field.has-addons .control:last-child:not(:only-child) .button,
-    .field.has-addons .control:last-child:not(:only-child) .input {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-    }
-
-    .field.has-addons .control .input:not([disabled]):hover {
-        z-index: 2
-    }
-
-    .field.has-addons .control .input:not([disabled]):focus {
-        z-index: 3
-    }
-
 .control {
     box-sizing: border-box;
     clear: both;
@@ -140,9 +105,44 @@ span {
     margin-bottom: 0.20rem;
 }
 
-.error
-.validation-message {
-    color: red;
-    display: block;
-    font-size: 0.70rem;
+    .error
+    .validation-message {
+        color: red;
+        display: block;
+        font-size: 0.70rem;
+    }
+
+.field.has-addons {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    z-index: 2;
 }
+
+    .field.has-addons .control:not(:last-child) {
+        margin-right: -1px;
+    }
+
+    .field.has-addons .control .input:not([disabled]):active {
+        z-index: 3;
+    }
+
+    .field.has-addons .control:first-child:not(:only-child) .input {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .field.has-addons .control:last-child:not(:only-child) .button,
+    .field.has-addons .control:last-child:not(:only-child) .input {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .field.has-addons .control .input:not([disabled]):hover {
+        z-index: 2
+    }
+
+    .field.has-addons .control .input:not([disabled]):focus {
+        z-index: 3
+    }
