@@ -30,5 +30,11 @@ namespace BlazorBasics.Captcha
             if(OnValidate.HasDelegate)
                 await OnValidate.InvokeAsync(ViewModel.IsValid);
         }
+
+        private async Task Submit_Click()
+        {
+            if(Properties.Button != ButtonType.Submit && OnSubmit.HasDelegate)
+                await OnSubmit.InvokeAsync();
+        }
     }
 }
