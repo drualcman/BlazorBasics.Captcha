@@ -4,6 +4,21 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Version>1.0.1.0</Version>
+	  <PackageLicenseFile>License.txt</PackageLicenseFile>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <Authors>Sergi Ortiz Gomez</Authors>
+	  <Company>Digital Door Aus</Company>
+	  <Description>Add a captcha control into your Balzor Server or Blazor Webassembly application.</Description>
+	  <Copyright>Free</Copyright>
+	  <RepositoryUrl>https://github.com/drualcman/BlazorBasics.Captcha</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageTags>captcha;blazor;blazor server; blazor webassembly</PackageTags>
+	  <AssemblyVersion>1.0.1.0</AssemblyVersion>
+	  <FileVersion>1.0.1.0</FileVersion>
+	  <PackageId>BlazorBasics.Captcha</PackageId>
+	  <Product>BlazorBasics.Captcha</Product>
   </PropertyGroup>
 
 
@@ -14,5 +29,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.7" />
   </ItemGroup>
+	<ItemGroup>
+		<None Include="..\License.txt">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>

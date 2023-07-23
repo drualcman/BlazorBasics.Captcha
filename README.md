@@ -1,9 +1,13 @@
+[![Nuget](https://img.shields.io/nuget/v/BlazorBasics.Captcha?style=for-the-badge)](https://www.nuget.org/packages/BlazorBasics.Captcha)
+[![Nuget](https://img.shields.io/nuget/dt/BlazorBasics.Captcha?style=for-the-badge)](https://www.nuget.org/packages/BlazorBasics.Captcha)
+
 # BlazorBasics.Captcha
 Add a captcha control into your Balzor Server or Blazor Webassembly application
 
 # How to use
-Clone this repository.<br/>
-Add project to your solution.<br/>
+Nugget installation
+```PM> Install-Package BlazorBasics.Captcha```
+Or clone the [repository](https://github.com/drualcman/BlazorBasics.Captcha) and add the project to your solution.<br/>
 Use the component CaptchaComponent into the component you want to check a real user.
 ``` RAZOR
 <CaptchaComponent />
