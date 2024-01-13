@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.1.0</Version>
+	  <Version>1.0.2</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
@@ -15,20 +15,24 @@
 	  <RepositoryUrl>https://github.com/drualcman/BlazorBasics.Captcha</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PackageTags>captcha;blazor;blazor server; blazor webassembly</PackageTags>
-	  <AssemblyVersion>1.0.1.0</AssemblyVersion>
-	  <FileVersion>1.0.1.0</FileVersion>
+	  <AssemblyVersion>1.0.2</AssemblyVersion>
+	  <FileVersion>1.0.2</FileVersion>
 	  <PackageId>BlazorBasics.Captcha</PackageId>
 	  <Product>BlazorBasics.Captcha</Product>
+	  <PackageReleaseNotes>Fixed issue when StateHasChanged() it's fired. Update to use with Net6, Net7, Net8</PackageReleaseNotes>
   </PropertyGroup>
 
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.26" Condition="'$(TargetFramework)' == 'net6.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.15" Condition="'$(TargetFramework)' == 'net7.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1" Condition="'$(TargetFramework)' == 'net8.0'" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.10" />
-  </ItemGroup>
 	<ItemGroup>
 		<None Include="..\License.txt">
 			<Pack>True</Pack>

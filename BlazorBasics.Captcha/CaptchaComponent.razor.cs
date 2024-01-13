@@ -12,14 +12,19 @@ namespace BlazorBasics.Captcha
 
         CaptchaViewModel ViewModel;
 
-        protected override async Task OnParametersSetAsync()
+        protected override async Task OnInitializedAsync() 
         {
             IEnumerable<CaptchaItem> questions = new List<CaptchaItem>();
             if(DataSource is not null)
             {
-                questions = await DataSource();
-                if(questions is null && Properties.Type != CaptchaType.Custom)
+                if(Properties.Type != CaptchaType.Custom)
+                {
                     questions = new List<CaptchaItem>();
+                }
+                else
+                {
+                    questions = await DataSource();
+                }
             }
             ViewModel = new CaptchaViewModel(Properties.Type, questions);
         }
