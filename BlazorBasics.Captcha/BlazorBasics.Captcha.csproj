@@ -5,7 +5,7 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.2</Version>
+	  <Version>1.0.3</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
@@ -15,11 +15,11 @@
 	  <RepositoryUrl>https://github.com/drualcman/BlazorBasics.Captcha</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PackageTags>captcha;blazor;blazor server; blazor webassembly</PackageTags>
-	  <AssemblyVersion>1.0.2</AssemblyVersion>
-	  <FileVersion>1.0.2</FileVersion>
+	  <AssemblyVersion>1.0.3</AssemblyVersion>
+	  <FileVersion>1.0.3</FileVersion>
 	  <PackageId>BlazorBasics.Captcha</PackageId>
 	  <Product>BlazorBasics.Captcha</Product>
-	  <PackageReleaseNotes>Fixed issue when StateHasChanged() it's fired. Update to use with Net6, Net7, Net8</PackageReleaseNotes>
+	  <PackageReleaseNotes>CSS improvements.</PackageReleaseNotes>
   </PropertyGroup>
 
 

@@ -1,5 +1,5 @@
 ﻿.field:not(:last-child) {
-    margin-bottom: .35rem;
+    margin-bottom: 0;
 }
 
 .control {
