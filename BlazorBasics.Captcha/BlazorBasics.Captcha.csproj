@@ -5,18 +5,18 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Version>1.0.3</Version>
+	  <Version>1.0.4</Version>
 	  <PackageLicenseFile>License.txt</PackageLicenseFile>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
 	  <Authors>Sergi Ortiz Gomez</Authors>
 	  <Company>Digital Door Aus</Company>
-	  <Description>Add a captcha control into your Balzor Server or Blazor Webassembly application.</Description>
+	  <Description>Fixed no overwrite background color and color in the input to avoid issues with dark theme. Update nuget last versino.</Description>
 	  <Copyright>Free</Copyright>
 	  <RepositoryUrl>https://github.com/drualcman/BlazorBasics.Captcha</RepositoryUrl>
 	  <RepositoryType>git</RepositoryType>
 	  <PackageTags>captcha;blazor;blazor server; blazor webassembly</PackageTags>
-	  <AssemblyVersion>1.0.3</AssemblyVersion>
-	  <FileVersion>1.0.3</FileVersion>
+	  <AssemblyVersion>1.0.4</AssemblyVersion>
+	  <FileVersion>1.0.4</FileVersion>
 	  <PackageId>BlazorBasics.Captcha</PackageId>
 	  <Product>BlazorBasics.Captcha</Product>
 	  <PackageReleaseNotes>CSS improvements.</PackageReleaseNotes>
@@ -28,9 +28,9 @@
   </ItemGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.26" Condition="'$(TargetFramework)' == 'net6.0'" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.15" Condition="'$(TargetFramework)' == 'net7.0'" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1" Condition="'$(TargetFramework)' == 'net8.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.32" Condition="'$(TargetFramework)' == 'net6.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.20" Condition="'$(TargetFramework)' == 'net7.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.7" Condition="'$(TargetFramework)' == 'net8.0'" />
 	</ItemGroup>
 
 	<ItemGroup>

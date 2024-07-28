@@ -34,10 +34,8 @@
 }
 
 .input {
-    background-color: white;
     border-color: #dbdbdb;
     border-radius: 4px;
-    color: #363636;
     box-shadow: inset 0 0.0625em 0.125em rgba(10,10,10,.05);
     max-width: 100%;
     width: 100%;
@@ -146,3 +144,11 @@ span {
     .field.has-addons .control .input:not([disabled]):focus {
         z-index: 3
     }
+
+
+
+@media (prefers-color-scheme: dark) {
+    .column.is-half .progress-info h6.progress-tittle {
+        color: white;
+    }
+}
