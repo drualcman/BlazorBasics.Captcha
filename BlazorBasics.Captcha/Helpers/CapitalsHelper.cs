@@ -1,5 +1,5 @@
 ﻿namespace BlazorBasics.Captcha.Helpers;
-internal static class CaptchaCapitalsHelper
+internal static class CapitalsHelper
 {
     internal static void CreateQuestions(List<CaptchaItem> CaptchaItems)
     {

@@ -13,7 +13,7 @@ internal class CaptchaViewModel
     public CaptchaViewModel(CaptchaType type, IEnumerable<CaptchaItem> dataSource)
     {
         Type = type;
-        CaptchaItems = new List<CaptchaItem>(dataSource);        
+        CaptchaItems = new List<CaptchaItem>(dataSource);
         IsValidated = false;
         Initialize();
     }
@@ -24,17 +24,20 @@ internal class CaptchaViewModel
     void Initialize()
     {
         ToValidate = string.Empty;
-        switch(Type)
+        switch (Type)
         {
             case CaptchaType.Numeric:
-                CaptchaNumericHelper.CreateQuestion(CaptchaItems);
+                NumericHelper.CreateQuestion(CaptchaItems);
                 break;
             case CaptchaType.CountryCapitals:
-                CaptchaCapitalsHelper.CreateQuestions(CaptchaItems);
+                CapitalsHelper.CreateQuestions(CaptchaItems);
+                break;
+            case CaptchaType.Random:
+                RandomHelper.CreateQuestion(CaptchaItems);
                 break;
             case CaptchaType.Custom:
             default:
-                if(!HasItems())
+                if (!HasItems())
                     throw new ArgumentException("Captcha questions must be have some to show.");
                 break;
         }
@@ -44,18 +47,18 @@ internal class CaptchaViewModel
     private bool HasItems()
     {
         bool result;
-        if(CaptchaItems is null) result = false;
+        if (CaptchaItems is null) result = false;
         else result = CaptchaItems.Any();
         return result;
     }
 
     private void SelectRandomOption()
     {
-        if(CaptchaItems.Count > 1)
+        if (CaptchaItems.Count > 1)
         {
             Random random = new Random();
             int totalItems = CaptchaItems.Count;
-            for(int i = 0; i < totalItems; i++)
+            for (int i = 0; i < totalItems; i++)
             {
                 CaptchaItems[i].Selected = false;
             }
@@ -71,7 +74,18 @@ internal class CaptchaViewModel
         IsValidated = true;
         CaptchaValidaor validator = new CaptchaValidaor(Selected);
         IsValid = validator.Validate(ToValidate);
-        if(!IsValid) Initialize();
+        if (!IsValid) Initialize();
+    }
+
+    public string SetPlaceholder(string placeholder)
+    {
+        string result = Type switch
+        {
+            CaptchaType.Numeric => Question,
+            CaptchaType.Random => Question,
+            _ => placeholder,
+        };
+        return result;
     }
 
 }

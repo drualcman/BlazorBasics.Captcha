@@ -1,5 +1,5 @@
 ﻿namespace BlazorBasics.Captcha.Helpers;
-internal static class CaptchaNumericHelper
+internal static class NumericHelper
 {
     internal static void CreateQuestion(List<CaptchaItem> CaptchaItems)
     {

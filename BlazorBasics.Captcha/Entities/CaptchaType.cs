@@ -2,5 +2,5 @@
 
 public enum CaptchaType
 {
-    Numeric, CountryCapitals, Custom
+    Numeric, CountryCapitals, Custom, Random
 }

@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Version>1.1.5</Version>
+		<Version>1.2.7</Version>
 		<PackageLicenseFile>License.txt</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Authors>Sergi Ortiz Gomez</Authors>
@@ -17,7 +17,7 @@
 		<PackageTags>captcha;blazor;blazor server; blazor webassembly</PackageTags>
 		<PackageId>BlazorBasics.Captcha</PackageId>
 		<Product>BlazorBasics.Captcha</Product>
-		<PackageReleaseNotes>Removed NET6 and NET7 support. Update Nugets.</PackageReleaseNotes>
+		<PackageReleaseNotes>Add Random Type Captcha, this generate a TOTP Code. Improved labels using MarkupString to accept HTML strings in the messages. Add public property to know if it's valid or not the CaptchaCompoent actual state.</PackageReleaseNotes>
 	</PropertyGroup>
 
 
@@ -27,6 +27,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10" Condition="'$(TargetFramework)' == 'net8.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" Condition="'$(TargetFramework)' == 'net9.0'" />
 	</ItemGroup>
 
 	<ItemGroup>

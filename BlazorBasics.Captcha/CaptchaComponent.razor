@@ -1,9 +1,9 @@
-﻿@if(ViewModel is not null)
+﻿@if (ViewModel is not null)
 {
     <div @attributes=WrapperAttributes>
-        @if(ViewModel.IsValid)
+        @if (ViewModel.IsValid)
         {
-            if(AfterValidate is null)
+            if (AfterValidate is null)
             {
                 <div class="control">
                     <button type="@Properties.Button.ToString().ToLower()" @onclick=Submit_Click class="button is-success">Send</button>
@@ -16,18 +16,21 @@
         }
         else
         {
-            <span class="help">@Properties.Description</span>
-            @if(Properties.Type != CaptchaType.Numeric)
+            if (!string.IsNullOrEmpty(Properties.Description))
             {
-                <span class="label">@ViewModel.Question</span>
+                <span class="help">@(new MarkupString(Properties.Description))</span>
+            }
+            @if (Properties.Type != CaptchaType.Numeric)
+            {
+                <span class="label">@(new MarkupString(ViewModel.Question))</span>
             }
             <div class="field has-addons">
                 <div class="control">
                     <input type="text" @bind=ViewModel.ToValidate class="input"
-                           placeholder="@(Properties.Type == CaptchaType.Numeric ? ViewModel.Question : Properties.Placeholder)" />
+                           placeholder="@(ViewModel.SetPlaceholder(Properties.Placeholder))" />
                 </div>
                 <div @onclick=OnValidate_Click class="control">
-                    @if(BeforeValidate is null)
+                    @if (BeforeValidate is null)
                     {
                         <span class="button is-info">Validate!</span>
                     }
@@ -38,9 +41,9 @@
                 </div>
             </div>
             <div class="error">
-                @if(ViewModel.IsValidated && !ViewModel.IsValid)
+                @if (ViewModel.IsValidated && !ViewModel.IsValid)
                 {
-                    <span class="validation-message">@Properties.ErrorMessage</span>
+                    <span class="validation-message">@(new MarkupString(Properties.ErrorMessage))</span>
                 }
             </div>
         }
