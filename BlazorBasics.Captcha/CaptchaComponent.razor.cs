@@ -12,34 +12,37 @@ namespace BlazorBasics.Captcha
 
         CaptchaViewModel ViewModel;
 
-        protected override async Task OnInitializedAsync() 
+        public bool IsValid => ViewModel.IsValid;
+
+        protected override async Task OnInitializedAsync()
         {
-            IEnumerable<CaptchaItem> questions = new List<CaptchaItem>();
-            if(DataSource is not null)
-            {
-                if(Properties.Type != CaptchaType.Custom)
-                {
-                    questions = new List<CaptchaItem>();
-                }
-                else
-                {
-                    questions = await DataSource();
-                }
-            }
-            ViewModel = new CaptchaViewModel(Properties.Type, questions);
+            await Refresh();
         }
 
         private async Task OnValidate_Click()
         {
             ViewModel.Validate();
-            if(OnValidate.HasDelegate)
+            if (OnValidate.HasDelegate)
                 await OnValidate.InvokeAsync(ViewModel.IsValid);
         }
 
         private async Task Submit_Click()
         {
-            if(Properties.Button != ButtonType.Submit && OnSubmit.HasDelegate)
+            if (Properties.Button != ButtonType.Submit && OnSubmit.HasDelegate)
                 await OnSubmit.InvokeAsync();
+        }
+
+        public async Task Refresh()
+        {
+            IEnumerable<CaptchaItem> questions = new List<CaptchaItem>();
+            if (DataSource is not null)
+            {
+                if (Properties.Type == CaptchaType.Custom)
+                {
+                    questions = await DataSource();
+                }
+            }
+            ViewModel = new CaptchaViewModel(Properties.Type, questions);
         }
     }
 }
