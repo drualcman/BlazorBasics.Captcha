@@ -17,7 +17,8 @@
 		<PackageTags>captcha;blazor;blazor server; blazor webassembly</PackageTags>
 		<PackageId>BlazorBasics.Captcha</PackageId>
 		<Product>BlazorBasics.Captcha</Product>
-		<PackageReleaseNotes>Add Random Type Captcha, this generate a TOTP Code. Improved labels using MarkupString to accept HTML strings in the messages. Add public property to know if it's valid or not the CaptchaCompoent actual state.</PackageReleaseNotes>
+		<PackageReleaseNotes>Update license adn dependencies.</PackageReleaseNotes>
+		<PackageProjectUrl>https://digitaldoor.com.au/adding-captcha-controls-blazor</PackageProjectUrl>
 	</PropertyGroup>
 
 
@@ -26,8 +27,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.10" Condition="'$(TargetFramework)' == 'net8.0'" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" Condition="'$(TargetFramework)' == 'net9.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.16" Condition="'$(TargetFramework)' == 'net8.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.5" Condition="'$(TargetFramework)' == 'net9.0'" />
 	</ItemGroup>
 
 	<ItemGroup>
